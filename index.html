@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Records</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-title">
+        <h1 class="heading1">Patient Records System</h1>
+    </div>
+    
+    <div class = main-wrapper>
+        <div class = "left">
+            <div class="live-search">
+                <input type="text" id ="search" placeholder="search">
+                <select class="sort-options" id="sorting">
+                    <option value="mostRecent">most recent</option>
+                    <option value="alphabeticaly">alphabeticaly</option>
+                    <option value="byRoom">By Room</option>
+                    <option value="byGender">sort by gender</option>
+                    <option value="byAge">sort by age</option>  
+                </select>
+            </div>
+            <form name='add' action="" id="add-patient">
+                <input type="text" name="fullName" placeholder="add patient">
+                <input type="text" name="age" placeholder="age">
+                <input type="text" name="room" placeholder="room">
+                <div class="radio">
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                </div>
+                <button class = "add-btn">Add Patient</button>   
+            </form> 
+            
+        </div>
+        <div class = "right">
+            <div class="count">
+                <h4 id ="patient-count">Loading Records.....</h4>
+                <h4 id ="remaining"></h4>
+                <h4 id ="open-beds"></h4>
+                
+            </div>
+            <div class ='patient-list car-list'>
+                <div class = 'progress'>
+                    <h2></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="patientFunctions.js"></script>
+    <!-- <script src="dates.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="https://unpkg.com/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

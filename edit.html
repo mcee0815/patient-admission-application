@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app-title">
+        <h1 class="heading1">Patient Edit Page</h1>
+    </div>
+    <div class = "edit-wrapper">
+        <form name='edit' class="edit-form" action="" id="edit-patient">
+            <label for="fullName">Name</label>
+            <input type="text" name="fullname" placeholder="add patient" id="full-name">
+            <label for="age">Age</label>
+            <input type="text" name="age" placeholder="age" id="age">
+            <label for="roomNumber">Room</label>
+            <input type="text" name="roomNumber" placeholder="room" id="room-number">
+            <button class = "remove-btn" id = "remove">Remove</button>
+        </form> 
+        <div class = "return-home">
+            <button id = "home" class = "homeBtn">Home</button>
+        </div>
+        
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+    <script src="patientFunctions.js"></script>
+    <script src="edit.js"></script>
+</body>
+</html>

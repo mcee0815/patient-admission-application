@@ -1,0 +1,167 @@
+html{
+    height: 430px;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: .95em;
+}
+label{
+    padding: 5px;
+}
+.main-wrapper{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    max-width: 100%;
+    height: 71vh;
+    background-image: url('medical3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.edit-wrapper{
+    padding-top: 30px;
+    padding-bottom: 50px;
+    max-width: 100%;
+    height: 71vh;
+    background-image: url('medical3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.app-title{
+    color: aliceblue;
+    text-align: center;
+    padding: 35px;
+    background-color: cadetblue;
+}
+.heading1{
+    margin: 0;
+}
+
+.patient-list{
+    border-radius: 10px;
+    padding: 15px;
+    width: 700px;
+    margin: auto;
+    background: azure;
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+form{
+    border-radius: 10px;
+    box-sizing: content-box;
+    width: 430px;
+    margin: auto;
+    background: aliceblue;
+    display: grid;
+    padding: 15px;
+    box-shadow: inset 1px 0px 10px 10px lightblue;
+}
+.edit-form{
+    border-radius: 10px;
+    box-sizing: content-box;
+    width: 430px;
+    margin: auto;
+    background: aliceblue;
+    display: grid;
+    padding: 15px;
+    margin-bottom: 0;
+    box-shadow: inset 1px 0px 10px 10px lightblue;
+}
+form input {
+    border-radius: 4px;
+    margin: 5px;
+    padding: 7px;
+}
+.return-home{
+    display: flex;
+    margin: auto;
+    margin-top: 25px;
+}
+.radio{
+    display:inline-block;
+    margin: 0 auto;
+    padding: 10px;
+}
+form .add-btn,form .remove-btn{
+    background-color: lightseagreen;
+    border-radius: 4px;
+    padding:7px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.live-search{
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 430px;
+    background: aliceblue;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 1px 0px 10px 10px lightblue;
+}
+.live-search input{
+    padding: 7px;
+    border-radius: 7px;
+    width: 94%;
+}
+h2,h3,h4{
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.count{
+    color: ghostwhite;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    background: turquoise;
+    padding-top: 10px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gainsboro;
+}
+.sort-options {
+    background: aliceblue;
+    margin-top: 10px;
+    width: 420px;
+    height: 30px;
+}
+.info:hover {
+    background-color: aqua;
+    font-size: 1.02em;
+    transition: font-size 1s;
+  }
+  .info {transition-timing-function: ease-out;}
+
+  .progress{
+    width: 0;
+    background:green;
+    border-radius: 3px;
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .homeBtn{
+    width: 200px;
+    height: 34px;
+    border-radius: 40px;
+    background-color: cornflowerblue;
+    color: blanchedalmond;
+    box-shadow: 5px 5px 5px skyBlue;
+    border:none;
+}
+.del:hover{
+    color: white;
+    transition: all .4s;
+    border-radius: 4px;      
+}
+.del {transition-timing-function: ease-out;}
