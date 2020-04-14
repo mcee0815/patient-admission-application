@@ -15,10 +15,9 @@ let patient = patients.find((p) => {
     return p.id === patientId
 })
 //redirect to index.html if theres no match
-if (patient === undefined) {
+if (!patient) {
     location.assign('/index.html')
 }
-
 // populate the form fields with the values returned from patient found
 nameEl.value = patient.name
 ageEl.value = patient.age

@@ -4,7 +4,7 @@ const getPatients = () => {
 	// fetch the records from local storage...
 	const patientsJSON = localStorage.getItem('patients')
 	// if there's data in local storage return it
-	if (patientsJSON !== null) {
+	if (patientsJSON) {
 		return JSON.parse(patientsJSON)
 	} else{
 		return []
@@ -267,12 +267,6 @@ const disableForm = () => {
     }
     elements[5].style.background = 'red'
     elements[5].style.color = 'white'
-    
-    // let forms = document.querySelectorAll('#add-patient')
-    // const form = forms[0];
-    // [...form.elements].forEach((input) => {
-    // input.disabled = true
-    // });
 }
 const progressBar = (patients) => {
     let progress = document.querySelector('.progress')
