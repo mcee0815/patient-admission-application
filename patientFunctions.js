@@ -1,14 +1,15 @@
 
-// function to get data from local storage
+//  get data from local storage
 const getPatients = () => {
 	// fetch the records from local storage...
 	const patientsJSON = localStorage.getItem('patients')
-	// if there's data in local storage return it
-	if (patientsJSON) {
-		return JSON.parse(patientsJSON)
-	} else{
-		return []
-	}
+    
+    try {
+        // if there's data in local storage return it
+        return JSON.parse(patientsJSON)
+    } catch (error) {
+        return [] 
+    }
 }
 // stringifies the dataset and saves it to local storage
 const savePatients = () => localStorage.setItem('patients',JSON.stringify(patients))
@@ -20,7 +21,7 @@ const setGender = (gender) => {
     } else if (gender === 'female') {
         genderSelected = 'female'
     }else {
-        genderSelected = 'not yet'
+        genderSelected = 'not set'
     }
         return genderSelected
 }
@@ -44,13 +45,12 @@ const createPatient = (e) => {
 		updatedAt,
         createdAt,
         gender
-	}
+    }
+    // add the new patienty to array then save to local storage and redirect to edit page
     patients.push(newPatient)
 	localStorage.setItem('patients',JSON.stringify(patients))
 		clearForm()
 		clearList()
-        //getAllRecords(patients)
-        
 		location.assign(`/edit.html#${id}`)
 }
 // removing the patient by id 
@@ -69,7 +69,7 @@ const removePatient = (id) => {
     }
 }
 //  generates a delete button and event listener
-const createDeleteBtn = (p) => {
+const createDeleteBtn = (patient) => {
     let deleteBtn = document.createElement('button')
             deleteBtn.textContent = 'DEL'
             deleteBtn.setAttribute('id','delete')
@@ -78,7 +78,7 @@ const createDeleteBtn = (p) => {
             deleteBtn.style.background = "orangered"
             deleteBtn.style.borderRadius = "5px"
             deleteBtn.addEventListener('click',(e) => {
-                removePatient(p.id)
+                removePatient(patient.id)
             })
             return deleteBtn
 }
@@ -177,6 +177,7 @@ const getAllRecords = (patients) => {
         let btnSpan = document.createElement('span')
         let deleteBtn = createDeleteBtn(p)
             btnSpan.appendChild(deleteBtn)    
+        
         // create an anchor element and set its attribute to the url+id which will direct the user to an edit page.
         // this element will also display ALL the patient information to the user
         let patientInfo = document.createElement('a')
@@ -192,7 +193,7 @@ const getAllRecords = (patients) => {
 	})
 }
 // this function will be used with instant name-search
-// it re-generates a found patient record
+// it generates a found patient record
 const createPatientDom = (thePatient) => {
     let btnSpan = document.createElement('span')
     let deleteBtn = createDeleteBtn(thePatient)
@@ -209,6 +210,7 @@ const createPatientDom = (thePatient) => {
 }
 // instant name search
 const nameSearch =  (patients,query) =>  {
+    
     // 1: catch all the matches
     filteredItems = patients.filter((p) => {
        return p.name.toLowerCase().includes(query.toLowerCase())
@@ -229,7 +231,7 @@ const clearList = () => {
 const clearForm = () => {
     document.querySelector('#add-patient').reset()
 }
-// number of bed available
+// number of beds available
 const CAPACITY = 11
 const recordCount = (patients) => {
     // dom refs .....

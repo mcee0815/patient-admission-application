@@ -23,8 +23,8 @@ document.querySelector('#add-patient').addEventListener('submit',(e) => {
 // patient search-box 
 document.querySelector('#search').addEventListener('input',(e) => {
 	let searchQuery = e.target.value
-	clearList()
-	nameSearch(patients,searchQuery)
+		clearList()
+		nameSearch(patients,searchQuery)	
 })
 // listen for storage events on localStorage..
 window.addEventListener('storage',(e) => {
