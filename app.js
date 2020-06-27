@@ -2,9 +2,9 @@
 
 let patients = getPatients()
 // start the app by displaying the most recent patients list...
-let recentpatients = sortMostRecent(patients,'mostRecent')
+let recentpatients = sortBySelection(patients,'default')
 	progressBar(recentpatients)  
-let filteredItems = []
+//let filteredItems = []
 
 // sort by dropdown list
 document.querySelector('#sorting').addEventListener('change',(e) => {

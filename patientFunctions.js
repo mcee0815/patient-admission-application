@@ -107,11 +107,13 @@ const sortBySelection = (patients,selection) => {
 			sorted = sortAlphabeticaly(patients,selection)
 			break;
 		default:
+            sorted = getPatients()
 			break;
 	}
 	return sorted
 }
 const sortMostRecent = (patientsArr,option) => {
+    
     if (option === 'mostRecent') {
         patientsArr.sort((a,b) => {
             if(a.updatedAt > b.updatedAt) {
@@ -270,6 +272,8 @@ const disableForm = () => {
     elements[5].style.background = 'red'
     elements[5].style.color = 'white'
 }
+
+// custom progress Bar
 const progressBar = (patients) => {
     let progress = document.querySelector('.progress')
     progress.style.width = '0px'
