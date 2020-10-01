@@ -1,14 +1,14 @@
-
+let dummyData = [{name:'xxx',age:123,gender:'xxx',room:'xxx'}]
 //  get data from local storage
 const getPatients = () => {
 	// fetch the records from local storage...
-	const patientsJSON = localStorage.getItem('patients')
+    const patientsJSON = localStorage.getItem('patients')
     
     try {
         // if there's data in local storage return it
         return JSON.parse(patientsJSON)
     } catch (error) {
-        return [] 
+        return []
     }
 }
 // stringifies the dataset and saves it to local storage
@@ -235,13 +235,17 @@ const clearForm = () => {
 }
 // number of beds available
 const CAPACITY = 11
+let remaining
 const recordCount = (patients) => {
     // dom refs .....
     let openBeds = document.querySelector('#open-beds')
     let remainingBeds = document.querySelector('#remaining')
     let patientCount = document.querySelector('#patient-count')
-    let remaining
+    
+    if (patients) {
         remaining = CAPACITY - patients.length + 1
+    }
+        // remaining = CAPACITY - patients.length + 1
     let msg = ''
     let fullWarning
 
