@@ -245,7 +245,6 @@ const recordCount = (patients) => {
     if (patients) {
         remaining = CAPACITY - patients.length + 1
     }
-        // remaining = CAPACITY - patients.length + 1
     let msg = ''
     let fullWarning
 
